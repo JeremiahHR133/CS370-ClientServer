@@ -368,7 +368,7 @@ int main(void)
                                 memset(message, 0, sizeof(message));
 
                                 // Inform sender that message was sent
-                                strcat(message, "Server echos back your message: \'");
+                                sprintf(message, "Server echos back your (UID: %d) message: \'", code);
                                 strcat(message, client_data_buffer);
                                 strcat(message, "\'\n");
                                 if (send(poll_fds[i].fd, message, strlen(message), 0) == -1)
